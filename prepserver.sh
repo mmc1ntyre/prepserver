@@ -11,7 +11,7 @@ shopt -s nocaseglob
 set -e
 
 script_runner=$(whoami)
-prepserver=$(cd && pwd)/prepserver
+prepserver_path=$(cd && pwd)/prepserver
 log_file="$prepserver_path/install.log"
 distro_sig=$(cat /etc/issue)
 recipe_path="https://github.com/mmc1ntyre/railsready/raw/master/recipes"
@@ -49,9 +49,6 @@ touch $HOME/.bashrc && touch $HOME/.bash_profile
 echo 'PS1="[\u@\h:\w] $ "' >> $HOME/.bashrc
 echo "==> done..."
 
-# Make Source Directory
-mkdir $HOME/$prepserver_path/src
-
 # Download Recipes
 echo -e "\n=> Downloading Recipes for Installation...\n"
 wget --no-check-certificate -O $prepserver_path/src/base.sh $recipe_path/base.sh
@@ -60,6 +57,7 @@ wget --no-check-certificate -O $prepserver_path/src/rails.sh $recipe_path/rails.
 wget --no-check-certificate -O $prepserver_path/src/imagemagick.sh $recipe_path/imagemagick.sh
 wget --no-check-certificate -O $prepserver_path/src/git.sh $recipe_path/git.sh
 wget --no-check-certificate -O $prepserver_path/src/wkhtmltopdf.sh $recipe_path/wkhtmltopdf.sh
+echo -e "\n==> done..."
 
 #Change directory
 cd $prepserver_path/src
