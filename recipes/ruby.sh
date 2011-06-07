@@ -16,10 +16,10 @@ echo "==> done..."
 
 # Install Rubygems
 echo -e "\n=> Installing Ruby Gems 1.7.2 ..."
-cd ~
+cd ~/prepserver/src
 wget http://rubyforge.org/frs/download.php/74619/rubygems-1.7.2.tgz
 tar xzvf rubygems-1.7.2.tgz
 cd rubygems-1.7.2
 sudo ruby setup.rb
-sudo ln -s /usr/bin/gem1.7.2 /usr/bin/gem
+sudo ln -s /usr/bin/gem1.8 /usr/bin/gem
 echo "==> done..."
