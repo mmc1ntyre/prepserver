@@ -49,6 +49,9 @@ touch $HOME/.bashrc && touch $HOME/.bash_profile
 echo 'PS1="[\u@\h:\w] $ "' >> $HOME/.bashrc
 echo "==> done..."
 
+# Make Source Directory
+mkdir $HOME/$prepserver_path/src
+
 # Download Recipes
 echo -e "\n=> Downloading Recipes for Installation...\n"
 wget --no-check-certificate -O $prepserver_path/src/base.sh $recipe_path/base.sh
