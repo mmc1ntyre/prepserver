@@ -14,7 +14,7 @@ script_runner=$(whoami)
 prepserver_path=$(cd && pwd)/prepserver
 log_file="$prepserver_path/install.log"
 distro_sig=$(cat /etc/issue)
-recipe_path="https://github.com/mmc1ntyre/railsready/raw/master/recipes"
+recipe_path="https://github.com/mmc1ntyre/prepserver/raw/master/recipes"
 
 control_c()
 {
